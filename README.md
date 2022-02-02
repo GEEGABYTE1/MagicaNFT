@@ -8,6 +8,8 @@ However, there a `n!` of possibilities, where `n` is the number of physical trai
 
 Users can play around with it and create their own combinations. They can even add different traits themselves if they can find `.png` files of such traits.
 
+Users must run the `script.py` file to interact with the program.
+
 # Things to be Noted 
 
 An `/images` directory will be created to accompany the number of NFTs you create. A <em>/images</em> file will be need to be created for everytime the program runs. This is due to the program not being able to handle file overiding. 
