@@ -177,16 +177,12 @@ class Create_NFT:
             im5 = Image.open(f'./face_parts/mouth/{mouth.mouth_files[item["Mouth"]]}.png').convert('RGBA')
             im6 = Image.open(f'./face_parts/nose/{nose.nose_files[item["Nose"]]}.png').convert('RGBA')
 
-            #Create each composite
             com1 = Image.alpha_composite(im1, im2)
             com2 = Image.alpha_composite(com1, im3)
             com3 = Image.alpha_composite(com2, im4)
             com4 = Image.alpha_composite(com3, im5)
             com5 = Image.alpha_composite(com4, im6)
 
-                            
-
-            #Convert to RGB
             rgb_im = com5.convert('RGB')
             file_name = str(item["tokenId"]) + ".png"
             rgb_im.save("./images/" + file_name)
