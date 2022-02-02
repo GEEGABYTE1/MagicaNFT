@@ -72,6 +72,38 @@ class Nose:
     }
 
 
+class Create_NFT:
+    user_num = int(input("How many NFTs would you like to create?: "))
+    all_images = []
+
+
+    def create_image(self):
+        new_image = {}
+        face = Face()
+        ears = Ears()
+        eyes = Eyes()
+        hair = Hair()
+        mouth = Mouth()
+        nose = Nose()
+        new_image['Face'] = random.choices(face.face, face.face_weights)[0]
+        new_image['Ears'] = random.choices(ears.ears, ears.ears_weights)[0]
+        new_image['Eyes'] = random.choices(eyes.eyes, eyes.eyes_weight)[0]
+        new_image['Hair'] = random.choices(hair.hair, hair.hair_weights)[0]
+        new_image['Mouth'] = random.choices(mouth.mouth, mouth.mouth_weights)[0]
+        new_image['Nose'] = random.choices(nose.nose, nose.nose_weights)[0]
+
+        if new_image in self.all_images:
+            self.create_image()
+        else:
+            return new_image 
+
+    def unique_combinations(self):
+        for i in range(user_num):
+            new_trait_image = self.create_image()
+            self.all_images.append(new_trait_image)
+             
+               
+
 
 
 
